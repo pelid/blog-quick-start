@@ -21,5 +21,11 @@ urlpatterns = [
     path('', render, kwargs={
         'template_name': 'index.html',
     }),
+    path('post/', render, kwargs={
+        'template_name': 'post.html',
+    }),
+    path('category/', render, kwargs={
+        'template_name': 'category.html',
+    }),
     path('admin/', admin.site.urls),
 ]
