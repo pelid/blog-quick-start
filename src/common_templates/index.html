@@ -22,8 +22,26 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400italic,400" rel="stylesheet">
     <link href="{% static 'blog.css' %}" rel="stylesheet">
-    <link rel="icon" href="favicon.ico">
-    <title>Artika HTML - Clean and Responsive Theme for Bootstrap 4</title>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="{% static 'site-icons/apple-icon-57x57.png' %}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{% static 'site-icons/apple-icon-60x60.png' %}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{% static 'site-icons/apple-icon-72x72.png' %}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{% static 'site-icons/apple-icon-76x76.png' %}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{% static 'site-icons/apple-icon-114x114.png' %}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{% static 'site-icons/apple-icon-120x120.png' %}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{% static 'site-icons/apple-icon-144x144.png' %}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{% static 'site-icons/apple-icon-152x152.png' %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'site-icons/apple-icon-180x180.png' %}">
+    <link rel="icon" type="image/png" sizes="192x192"  href="{% static 'site-icons/android-icon-192x192.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'site-icons/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{% static 'site-icons/favicon-96x96.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'site-icons/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'site-icons/manifest.json' %}">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <title>Блог о звездах и космосе</title>
 
     <style type="text/css">
       .carousel-item-img {
@@ -52,7 +70,7 @@
         <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
           <div class="container-fluid">
             <a class="navbar-brand" href="index.html">
-              <img src="img/logo.png" alt="" />
+              <img src="{% static 'logo.png' %}" alt="" />
             </a>
             <button class="navbar-toggler navbar-toggler-left toggle-button" type="button" aria-expanded="false" aria-label="Toggle navigation">
               <i class="fa fa-bars"></i>
@@ -63,7 +81,7 @@
           </div>
         </nav>
 
-        
+
         <div class="container">
           <div class="row">
             <div class="col-12">
@@ -88,7 +106,7 @@
                       <h5><a href="post.html">Ligula Ac Dapibus Auctor Velit Nisl Rutrum Ipsum</a></h5>
                       <p>...</p>
                     </div>
-                  </div>                  
+                  </div>
                 </div>
                 <a class="carousel-control-prev" href="#headerCarousel" role="button" data-slide="prev">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
