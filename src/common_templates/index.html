@@ -2,35 +2,13 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
-    <!--[if IEMobile]><meta http-equiv="cleartype" content="on" /><![endif]-->
-    <meta name="MobileOptimized" content="320">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <meta name="description" content="Учебный проект на Django. Блок с подгрузкой фотографий из Google Docs">
-    <meta name="author" content="@devman">
-    <meta property="og:title" content="Блог о звездах и космосе">
-    <meta property="og:description" content="Учебный проект на Django. Блок с подгрузкой фотографий из Google Docs">
-    <meta property="og:image" content="{% static 'logo.png' %}">
-    <!-- TODO -->
-    <!-- <meta property="og:url" content="https://prianto.github.io/artika-html/"> -->
-    <!-- <meta name="twitter:card" content="summary_large_image"> -->
-    <!-- <meta property="og:site_name" content="Devman"> -->
-    <!-- <meta name="twitter:image:alt" content="Блог о звездах и космосе"> -->
-    <!-- <meta name="twitter:site" content="@devman"> -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" integrity="sha256-BtbhCIbtfeVWGsqxk1vOHEYXS6qcvQvLMZqjtpWUEx8=" crossorigin="anonymous" />
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet' type='text/css'>
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400italic,400" rel="stylesheet">
-    <link href="{% static 'blog.css' %}" rel="stylesheet">
+    {% include '_page-device-fit-meta.html' %}
 
-    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'site-icons/apple-touch-icon.png' %}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'site-icons/favicon-32x32.png' %}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'site-icons/favicon-16x16.png' %}">
-    <link rel="manifest" href="{% static 'site-icons/site.webmanifest' %}">
-    <link rel="mask-icon" href="{% static 'site-icons/safari-pinned-tab.svg' %}" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
+    {% include '_page-social-meta.html' %}
+
+    {% include '_page-common-styles.html' %}
+
+    {% include '_page-icons-meta.html' %}
 
     <title>Блог о звездах и космосе</title>
 
@@ -45,36 +23,11 @@
     </style>
   </head>
   <body>
-    <nav id="menu">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="/"><i class="fa fa-home fa-fw" aria-hidden="true"></i> Главная</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="category.html"><i class="fa fa-vial fa-fw" aria-hidden="true"></i> Наука</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="category.html"><i class="fa fa-rocket fa-fw" aria-hidden="true"></i> Ракеты</a>
-        </li>
-      </ul>
-    </nav>
+    {% include '_page-navbar.html' %}
 
     <main id="panel">
       <div id="panel-content">
-        <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">
-              <img src="{% static 'logo.png' %}" alt="" />
-            </a>
-            <button class="navbar-toggler navbar-toggler-left toggle-button" type="button" aria-expanded="false" aria-label="Toggle navigation">
-              <i class="fa fa-bars"></i>
-            </button>
-            <div class="collapse navbar-collapse">
-              <ul class="navbar-nav ml-auto"></ul>
-            </div>
-          </div>
-        </nav>
-
+        {% include '_page-mobile-navbar.html' %}
 
         <div class="container">
           <div class="row">
@@ -190,43 +143,10 @@
             </div>
           </div>
         </div>
-
-        <footer>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 col-md-10 mx-auto">
-                <p class="copyright text-muted">
-                  Copyright &copy; 2017
-                </p>
-                <ul class="list-inline text-center">
-                  <li class="list-inline-item">
-                    <a target="_blank" href="https://twitter.com">
-                      <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                      </span>
-                    </a>
-                  </li>
-                  <li class="list-inline-item">
-                    <a target="_blank" href="https://github.com">
-                      <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                      </span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </footer>
-
+        {% include '_page-footer.html' %}
       </div>
     </main>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
-    <script src="{% static 'blog.js' %}"></script>
+
+    {% include '_page-common-js.html' %}
   </body>
 </html>
