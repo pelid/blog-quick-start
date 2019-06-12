@@ -15,15 +15,27 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+
+from posts.models import Post
+
+
+def render_post(request, slug):
+    # FIXME ограничить выборку
+    # TODO переместить view в приложение posts
+    post = get_object_or_404(Post, slug=slug)
+
+    return render(request, template_name='post.html', context={
+        'article_html': post.html,
+        'title': post.title,
+    })
+
 
 urlpatterns = [
     path('', render, kwargs={
         'template_name': 'index.html',
     }),
-    path('post/', render, kwargs={
-        'template_name': 'post.html',
-    }),
+    path('post/<slug:slug>/', render_post, name='post'),
     path('category/', render, kwargs={
         'template_name': 'category.html',
     }),

@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'posts',
 ]
 
 MIDDLEWARE = [
@@ -54,7 +55,7 @@ ROOT_URLCONF = 'dj_blog.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [   
+        'DIRS': [
             os.path.join(BASE_DIR, 'common_templates'),
         ],
         'APP_DIRS': True,
@@ -124,3 +125,5 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'common_static'),
 ]
+
+GAPI_CREDENTIALS_FILEPATH = os.getenv('GAPI_CREDENTIALS')
