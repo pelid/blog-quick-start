@@ -50,15 +50,20 @@ def get_article_html(gdrive_api, doc_id, ):
 
 
 def main():
+    import argparse
+    parser = argparse.ArgumentParser(description='Process some integers.')
+    parser.add_argument('gapi_credentials_filepath')
+    parser.add_argument('doc_id', default='17coS88dCReNY_psETrhNCvz39tFlsc7DUrkxFXwC7HA')
+    args = parser.parse_args()
+
     google_scope = [
         # 'https://www.googleapis.com/auth/spreadsheets', # disabled
         'https://www.googleapis.com/auth/drive',
     ]
-    doc_id = '17coS88dCReNY_psETrhNCvz39tFlsc7DUrkxFXwC7HA'
 
-    gdrive_api = auth_in_google_drive(google_scope, os.getenv('GAPI_CREDENTIALS'))
+    gdrive_api = auth_in_google_drive(google_scope, args.gapi_credentials_filepath)
 
-    title, article_html = get_article_html(gdrive_api, doc_id)
+    title, article_html = get_article_html(gdrive_api, args.doc_id)
     print(title)
     print(article_html)
 
