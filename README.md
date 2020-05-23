@@ -6,7 +6,7 @@
 
 # Как установить
 
-Желательно воспользоваться одним из менеджеров виртуальных окружений [virtualenv](https://pypi.org/project/virtualenv/). Если не знаком с ним, то пропустите этот шаг.
+Желательно воспользоваться одним из менеджеров виртуальных окружений [virtualenv](https://pypi.org/project/virtualenv/). Если не знакомы с ним, то пропустите этот шаг.
 
 Установите пакеты:
 
@@ -18,6 +18,7 @@ pip install -r requirements.txt
 
 ```bash
 cd src
+python manage.py migrate
 python manage.py runserver
 ```
 
